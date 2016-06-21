@@ -1,16 +1,16 @@
 S M A L L
 =========
   
-  
 This is my custom Dockerfile for work on systems 32 bit  
 
-Why this?, because my computer don't suporte 64 bits distributions. /cry ;(  
+Why this?
+Because docker documentation says it requires 64 bits and my computer doesn't support it. /cry ;(  
   
   
 Then how WTF use this ....?  
 ```bash
 $ sudo apt-get install docker.io  
-$ sudo docker -v  # if all it's ok, you will see something like this: Docker version 1.6.2  
+$ sudo docker -v  # You'll see something like this: 'Docker version 1.6.2' If it's all good
 ```
   
 Next step ...  
@@ -33,17 +33,19 @@ run this image and enter into bash:
 $ sudo docker run -ti -v $(pwd)/:/root -p 8000:8000 container_name bash # (container_name) your container name defined on build  
 ```
   
-now go to folder root/:  
+now go to the root/ folder:  
 ```bash
 $ cd root/  
 $ django-admin.py startproject some_name .  
 ```
   
 outside of bash, edit the project:  
+
 ```bash
 $ sudo subl .  # Why I need use sudo?, because this is defined on build and run remember? $(pwd)/:/root  
 ```
+'subl' requires Sublime Text
   
-This is a small example how use docker on systems 32 bits.  
+This is a small example how to use docker on systems 32 bits.  
   
-i hope this is helpful :D  
+I hope this is can be helpful :D  
